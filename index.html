@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="src/static/css/style.css">
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <h1>Employee Directory</h1>
+        <div class="header-controls">
+            <input type="text" id="search-input" placeholder="Search by name or email" class="search-input">
+            <button id="filter-btn" class="filter-btn">Filter</button>
+        </div>
+    </header>
+
+    <!-- Filter Sidebar -->
+    <div id="filter-sidebar" class="filter-sidebar">
+        <h3>Filter Employees</h3>
+        <div class="filter-group">
+            <label>First Name:</label>
+            <input type="text" id="filter-firstname" class="filter-input">
+        </div>
+        <div class="filter-group">
+            <label>Department:</label>
+            <input type="text" id="filter-department" class="filter-input">
+        </div>
+        <div class="filter-group">
+            <label>Role:</label>
+            <input type="text" id="filter-role" class="filter-input">
+        </div>
+        <div class="filter-actions">
+            <button id="apply-btn" class="apply-btn">Apply</button>
+            <button id="reset-btn" class="reset-btn">Reset</button>
+        </div>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="controls-section">
+        <div class="left-controls">
+            <span>Sort:</span>
+            <select id="sort-select" class="sort-select">
+                <option value="">--Select--</option>
+                <option value="firstName">First Name</option>
+                <option value="department">Department</option>
+            </select>
+            <span>Show:</span>
+            <select id="show-select" class="show-select">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div class="right-controls">
+            <button id="add-employee-btn" class="add-employee-btn">Add Employee</button>
+        </div>
+    </div>
+
+    <!-- Employee Grid -->
+    <div id="employee-grid" class="employee-grid">
+        <!-- Employees will be rendered here -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2025 Employee Directory App. All rights reserved.</p>
+    </footer>
+
+    <!-- Add/Edit Employee Modal -->
+    <div id="employee-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">Add Employee</h2>
+            <form id="employee-form">
+                <div class="form-group">
+                    <label>First name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error-message" id="firstName-error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Last name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error-message" id="lastName-error"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="form-group half">
+                        <label>Department</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select Department</option>
+                            <option value="HR">HR</option>
+                            <option value="IT">IT</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                        <span class="error-message" id="department-error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Developer">Developer</option>
+                        <option value="Analyst">Analyst</option>
+                        <option value="Coordinator">Coordinator</option>
+                        <option value="Senior Developer">Senior Developer</option>
+                        <option value="Recruiter">Recruiter</option>
+                        <option value="Specialist">Specialist</option>
+                        <option value="Assistant">Assistant</option>
+                        <option value="Support">Support</option>
+                        <option value="Senior Analyst">Senior Analyst</option>
+                    </select>
+                    <span class="error-message" id="role-error"></span>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+                    <button type="submit" id="save-btn" class="save-btn">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Load JavaScript -->
+    <script src="src/static/js/data.js"></script>
+    <script src="src/static/js/app.js"></script>
+</body>
+</html>
